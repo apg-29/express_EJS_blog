@@ -1,0 +1,21 @@
+<h1 class="mt-5 pt-5">Create New Post</h1>
+<form action="/posts" method="POST">
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+    <select class="form-control" id="category" name="category">
+      <option value="Technology">Technology</option>
+      <option value="Lifestyle">Lifestyle</option>
+    <!-- Add more categories as needed -->
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="title" required>
+  </div>
+  <div class="mb-3">
+    <label for="content" class="form-label">Content</label>
+    <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>

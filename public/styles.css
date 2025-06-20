@@ -1,0 +1,96 @@
+body {
+  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+p{
+  margin-top: 30px;
+}
+
+
+footer {
+  background-color: #eee;
+}
+
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom colors */
+.btn-primary {
+  background-color: #4CAF50 !important;  /* Green */
+  border-color: #4CAF50 !important;
+}
+
+.btn-danger {
+  background-color: #c33b31 !important;  /* Red */
+  border-color: #c33b31 !important;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px 0;
+  list-style: none;
+  padding: 0;
+}
+
+.page-link {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #4CAF50;
+  background: #fff;
+  border: 1px solid #4CAF50;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+}
+
+.page-link:hover,
+.page-link:focus {
+  background: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-item.active .page-link {
+  background: #4CAF50;
+  color: #fff;
+  border-color: #388e3c;
+  cursor: default;
+}
+
+.page-item.disabled .page-link {
+  color: #ccc;
+  border-color: #eee;
+  background: #f9f9f9;
+  pointer-events: none;
+}
+
+.comment-outer {
+  background: #fff; /* Outer box is white */
+  border-radius: 8px;
+  border: 2px solid #4CAF50; /* Thin green border */
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.07);
+}
+
+.comment-inner {
+  background: #fff; /* Inner box stays white */
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin: 0.25rem 0;
+}
+.comment-inner strong {
+  color: #388e3c;
+}

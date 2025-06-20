@@ -1,0 +1,39 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <%- include('partials/header') %>
+    </div>
+  </div>
+<h1 class="title post mt-5"><%= post.title %></h1>
+<p style="white-space: pre-line;"><%= post.content %></p>
+
+<h3>Comments</h3>
+<div class="comments my-4">
+    <% (post.comments || []).forEach(comment => { %>
+        <div class="card mb-2 p-2 comment-outer">
+            <div class="comment-inner p-2">
+                <p class="mb-0">
+                    <strong><%= comment.user %>:</strong>
+                    <%= comment.content %>
+                </p>
+            </div>
+        </div>
+  <% }) %>
+</div>
+
+    <div class="comment-form">
+
+        <form action="/posts/<%= post.id %>/comment" method="POST" class="my-4">
+            <textarea name="content" class="form-control mb-2" placeholder="Write a comment..." required></textarea>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>  
+
+
+    <a href="/" class="btn btn-secondary mt-3 d-flex justify-content-center">Back to All Posts</a>
+</div>
+
+
+
+

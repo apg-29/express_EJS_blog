@@ -1,0 +1,50 @@
+<h1>All Posts</h1>
+<div class="row mt-5">
+  <% posts.forEach(post => { %>
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <div class="card">
+        <img src="/example1.jpg" class="card-img-top" alt="Post Image">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.content.substring(0, 100) %>...</p>
+          <a href="/posts/<%= post.id %>" class="btn btn-primary">
+            <i class="bi bi-eye"></i> Read More
+          </a>
+          <a href="/posts/<%= post.id %>/edit" class="btn btn-warning">
+            <i class="bi bi-pencil"></i> Edit
+          </a>
+          <form action="/posts/<%= post.id %>/delete" method="POST" class="d-inline">
+            <button class="btn btn-danger">
+              <i class="bi bi-trash"></i> Delete
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+<!-- Pagination -->
+
+<ul class="pagination justify-content-center">
+  <!-- Previous button -->
+  <li class="page-item <%= currentPage === 1 ? 'disabled' : '' %>">
+    <a class="page-link" href="/?page=<%= currentPage - 1 %>">Previous</a>
+  </li>
+
+  <!-- Page numbers -->
+  <% for(let i = 1; i <= totalPages; i++) { %>
+    <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+      <a class="page-link" href="/?page=<%= i %>"><%= i %></a>
+    </li>
+  <% } %>
+
+  <!-- Next button -->
+  <li class="page-item <%= currentPage === totalPages ? 'disabled' : '' %>">
+    <a class="page-link" href="/?page=<%= currentPage + 1 %>">Next</a>
+  </li>
+</ul>
+
+
+
+
+
